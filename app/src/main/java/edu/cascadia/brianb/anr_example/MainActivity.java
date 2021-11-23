@@ -23,25 +23,31 @@ public class MainActivity extends AppCompatActivity {
         secondsSeek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                displayDelay.setText(getString(R.string.delayDisplay,progress));
+                displayDelay.setText(getString(R.string.delayDisplay, progress));
             }
+
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
             }
+
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
         });
-        stallButton.setOnClickListener( view -> SleepAwhile(secondsSeek.getProgress()));
-
-    }
-    private static void SleepAwhile(int sec) {
-        try {
-            Thread.sleep(sec * 1000); // sleep for some seconds
-
-        }
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        stallButton.setOnClickListener(view -> {
+            new Thread(new Runnable() {
+                public void run() {
+                    view.post(new Runnable() {
+                        public void run() {
+                            try {
+                                Thread.sleep(secondsSeek.getProgress() * 1000); // sleep for some seconds
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                }
+            }).start();
+        });
     }
 }
