@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ANR-Example</string>
+    <string name="delayDisplay">Number of seconds to stall: <strong>%1$d seconds</strong></string>
+    <string name="looking_for_anr">Looking for ANR</string>
+    <string name="run_blocking_thread">Stall Thread</string>
+    <string name="set_the_number_of_seconds_to_block">Set the number of seconds to stall</string>
 </resources>

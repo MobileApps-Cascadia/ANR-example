@@ -13,37 +13,38 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Looking for ANR"
+        android:text="@string/looking_for_anr"
         android:textAlignment="center"
-        android:textSize="48dp" />
+        android:textSize="48sp" />
 
     <Button
-        android:id="@+id/stopButton"
+        android:id="@+id/stallButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Run Blocking Thread" />
+        android:text="@string/run_blocking_thread" />
 
     <SeekBar
         android:id="@+id/sleepMeSeek"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="300dp"
         android:layout_height="31dp"
-        android:layout_below="@+id/stopButton"
+        android:layout_below="@+id/stallButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="58dp"
         android:max="20"
         android:progress="3" />
 
     <TextView
+        android:id="@+id/displayDelay"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/sleepMeSeek"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="-150dp"
+        android:layout_marginStart="-200dp"
         android:layout_marginTop="0dp"
-        android:layout_toEndOf="@+id/stopButton"
-        android:text="Set the number of seconds to block" />
+        android:layout_toEndOf="@+id/stallButton"
+        android:text="@string/set_the_number_of_seconds_to_block" />
 
 </RelativeLayout>
