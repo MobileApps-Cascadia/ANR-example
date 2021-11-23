@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Button click to sleep the UI thread
-        //Continue clicking on the app while "hung" to see the ANR message
+        //TODO: Click the Button to sleep the UI thread for some seconds
+        //TODO: Adjust the slider then click to see how much stall it takes to cause an ANR message
 
         final SeekBar secondsSeek = findViewById(R.id.sleepMeSeek);
         final TextView displayDelay = findViewById(R.id.displayDelay);
